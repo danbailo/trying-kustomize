@@ -1,7 +1,16 @@
-bases:
+resources:
   - ../../base
 
 nameSuffix: -deployment2
 
-patchesStrategicMerge:
-  - patch.yaml
+patches:
+- target:
+    kind: Deployment
+    name: deploy
+  patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: shared-deployment
+    spec:
+      replicas: 3
