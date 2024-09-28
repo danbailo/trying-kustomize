@@ -1,0 +1,7 @@
+bases:
+  - ../../base
+
+nameSuffix: -deployment1
+
+patchesStrategicMerge:
+  - patch.yaml

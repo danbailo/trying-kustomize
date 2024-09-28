@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shared-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shared-app
+  template:
+    metadata:
+      labels:
+        app: shared-app
+    spec:
+      containers:
+        - name: shared-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
